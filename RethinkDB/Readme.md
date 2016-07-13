@@ -2,3 +2,5 @@
   
     ---RQL( PHP - расширение для RethinkDB)
     ---DB( RethinkDB )
+ 
+   ну и таблицы конечно (создание записей в таблицах "categories" & "products" в файле index.php)
