@@ -1,4 +1,3 @@
-
 <html><title>REthinkDB</title></html>
 
 <?php
@@ -12,8 +11,11 @@
     // Connect to localhost
     $conn = r\connect($host, $port, $db);
 
+    // FNS
+    include 'fns.php';
 
 /*
+// ==========================================DATA
 $arr = array( 'name' => "Телефоны",
               'subcats' => [
                              '0' => "Apple",
@@ -42,6 +44,7 @@ $arr2 = array( 'category' => "Телефоны Samsung",
                   'price' => '2050',
                   'status' => '1'
                 );
+// ==========================================DATA                
 */
 
 
@@ -82,10 +85,7 @@ foreach($rsCats as $data)
   echo "<br><br>" ;
 }
 
-//d($query);
-
-
-$rsCats = reset($rsCats);
+echo "-----------------------------------------------><br>";
 
 
 foreach($rsCats as $data)
@@ -95,36 +95,5 @@ foreach($rsCats as $data)
   echo "<br><br>" ;
 }
 
-
-
-
-//====================================================================================
-
-// Make Array from response RethinkDB
-function CreateRsArray($query)
- {
-    if(! $query){ die("Shit"); }
-
-     $rs = array();
-     foreach($query as $item)
-     {
-       $rs[] = $item;
-     }
-
-     return $rs;
- }
-
-
-
-// DEBUG - FUNC
-function d($value = null, $die = 1)
- {
-  $empty = $value == "" ? "Yes" : "No";
-  echo "=====================================-> Debug (Value is empty -> $empty): <br><pre>";
-  print_r($value);
-  echo "</pre>";
-
-  if($die == 1) die;
- }
 
 ?>
