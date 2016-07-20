@@ -1,1 +1,1 @@
-Example of class in PHP
+## Example of class in PHP
