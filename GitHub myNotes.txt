@@ -64,6 +64,8 @@ git remote -v
 git push -u origin master // один раз так, так как здесь ключ: -u
 git push // второй раз так можно
 
+// Лог действией
+git log
 
 
 
