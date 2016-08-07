@@ -75,9 +75,20 @@ git log --pretty=format:"%h - %an, %ar : %s"
 // Показать за последние 2 недели
 git log --since=2.weeks
 
-// ??
+// Показать изменение с прошлой версией 
 git log -p -2
 
+// Эта комманда вызывает VIM, в нем в начале можно написать комментарий , 
+// чтобы сохранить надо нажать Enter и в конце написать - ":x"
+git commit
+
+// в файле .gitconfig прописывает секцию [core] и это для того чтобы открывался не VIM, а Notepad для написанния комментария
+git config --global core.editor "'C:\Program Files\Notepad++\notepad++.exe' - multiInst -notabbar -nosession -noPlugin"
+
+// то что прописивает в файле .gitconfig(путь к файлу:C:\Users\NameUser\...)
+[core]
+   editor = 'C:\\Program Files\\Notepad++\\notepad++.exe' - multiInst -notabbar -nosession -noPlugin
+  
 
 
 // ************************************************ ПОСЛЕДОВАТЕЛЬНОСТЬ РАБОТЫ
