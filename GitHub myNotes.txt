@@ -191,3 +191,10 @@ git branch -v
 5.git push (или git push -u origin master - один раз)
 
 // ************************************************ ПОСЛЕДОВАТЕЛЬНОСТЬ РАБОТЫ
+
+// ************************************************ push.bat
+cd D:\path\to\project
+git add .
+git commit -m"new coomit"
+git push
+// ************************************************ push.bat
