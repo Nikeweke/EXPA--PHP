@@ -201,3 +201,12 @@ git add .
 git commit -m"new coomit"
 git push
 // ************************************************ push.bat
+
+// ************************************************ pusher.bat
+cd D:\path\to\project
+git init
+git remote add origin https://Nickname:password@bitbucket.org/Nickname/project.git
+git add .
+git commit -m"new coomit"
+git push -u origin master
+// ************************************************ pusher.bat
