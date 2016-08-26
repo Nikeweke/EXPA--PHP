@@ -22,7 +22,7 @@
 
 
 #### ========-> для работы link_to_route() и для  
-####  <link rel="stylesheet" href="{!! URL::asset('assets/css/booter/css/bootstrap.css') !!}">     
+####   href="{!! URL::asset('assets/css/booter/css/bootstrap.css') !!}"     
 1.в composer.js после - "laravel/framework": "5.2.", надо дописать :   "laravelcollective/html": "~5.0"    
 2. написать в cmd(предварительно перейти в папку где лежит 'artisan') : php composer.phar update    
 3. в папке config/ открыть - app.php, там найти массив 'providers'  в конец которого добавить :     'Collective\Html\HtmlServiceProvider',    
