@@ -8,7 +8,7 @@
 
 ### I.   Создать контроллер:                       php artisan make:controller NameController
 ### II.  Создать миграцию:                         php artisan make:migration create_tasks_table --create=tasks     
-### II.  Создать модель:                           php artisan make:model task  
+### II.  Создать модель:                           php artisan make:model Task  
 ### III.  Создать миграцию и модель:               php artisan make:model Name -m     
 ### III. Запуск миграций (создание таблиц):        php artisan migrate
 ### IV.  Просмотра маршрутов (routes):             php artisan route:list
