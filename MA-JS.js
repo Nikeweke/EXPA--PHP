@@ -45,9 +45,42 @@ function SetCookie(name,value)
    now.setDate( 1 + now.getDate()); //дни
    document.cookie = name + "=" + value +"; path=/; expires="+ now.toGMTString();
  }
+ 
+ 
+ 
+ 
+  /***********************************************************
+ *  Выход из системы (Очищение куков)
+ *
+ *******************************************************/
+ function Logout()
+  {
+     DelCookie('Uid');
+     DelCookie('Login');
+     location.href = "login.html";
+  }
  // ................................................................................................. COOKIES
 
 
+
+
+
+/***********************************************************
+*   Возвращает отформатированную сегодняшнюю дату
+*
+*******************************************************/
+function GetCurrentDate()
+ {
+   d = new Date();
+
+   curr_date          =         d.getDate() > 9 ? d.getDate() : '0'  + d.getDate() ;
+   curr_month         =         d.getMonth() > 9 ? (d.getMonth()+1) : '0'  + (d.getMonth()+1) ;
+   curr_year          =         d.getFullYear();
+   curr_hour          =         d.getHours() > 9 ? d.getHours() : '0'  + d.getHours() ;
+   curr_minutes       =         d.getMinutes() > 9 ? d.getMinutes() : '0'  + d.getMinutes() ;
+
+   return curr_date + "." + curr_month + "." + curr_year + " " + curr_hour + ":" + curr_minutes;
+ }
 
 
 
