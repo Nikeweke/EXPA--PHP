@@ -53,4 +53,18 @@
 Решение : написать в классe той модели которой юзаешь----: public $timestamps = false;
 
 ### ========->Регистрация своего Middleware(filters) в файле Kernel.php массив $routeMiddleware(не глобал), $middleware(глобал)
-              'myauth' => \App\Http\Middleware\AuthMiddleware::class, // My Middleware
+              'myauth' => \App\Http\Middleware\AuthMiddleware::class, // My Middleware     
+              
+### ========-> Cookies (Get, Delete, Set)
+- Установка кук:   $cookie1 = cookie('email', $userData['email'], 2880);
+                   $cookie2 = cookie('id'   , $userData['id'], 2880);
+                   return  response($resData)->cookie($cookie1)->cookie($cookie2);
+- Достать куку :  public function GetCookie(Request $request, $name)
+                  {
+                    return $request->cookie($name);
+                  }
+- Удалить куку:   public function DelCookie($name)
+                   {
+                    $cookie = cookie()->forget('cookiename');
+                    return    response('cookie has been deleted')->withCookie($cookie);
+                  }                  
