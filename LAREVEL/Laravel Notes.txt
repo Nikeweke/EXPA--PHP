@@ -6,15 +6,15 @@
 #### ========-> Что бы на сайт заходить не через адресс "localhost/public", а через localhost:8000 то запускаем : -> php artisan serve     
 
 
-### I.   Создать контроллер:                       php artisan make:controller NameController
-### II.  Создать миграцию:                         php artisan make:migration create_tasks_table --create=tasks     
-### II.  Создать модель:                           php artisan make:model Task  
-### III.  Создать миграцию и модель:               php artisan make:model Name -m     
-### III. Запуск миграций (создание таблиц):        php artisan migrate
-### IV.  Просмотра маршрутов (routes):             php artisan route:list
-### IV.  DatabaseSeeder - это тестовые записи в БД делаються:   php artisan db:seed      
-    но перед командой надо написать класс и в нем прописать     
-    занос данных в таблицу а потом только выполнять комманду       
+### I.   Создать контроллер:                         php artisan make:controller NameController
+### II.  Создать миграцию:                           php artisan make:migration create_tasks_table --create=tasks     
+### II.  Создать модель:                             php artisan make:model Task  
+### III.  Создать миграцию и модель:                 php artisan make:model Name -m     
+### III. Запуск миграций (создание таблиц):          php artisan migrate
+### IV.  Просмотра маршрутов (routes):               php artisan route:list
+### IV.  DatabaseSeeder - это тестовые записи в БД:  php artisan db:seed      
+### VI. Middleware:                                  php artisan make:middleware NameMiddleware  
+  
 
 
 #### ========-> Вывовод на страницу делаеться так же как в MVC
@@ -37,7 +37,7 @@
 #### ========-> В МАршрутах лучше не писать пути с нижним подчеркиванием потом это не воркаЕТ !!
 
 
-#### ========-> Отправка формы AJAX (И без отправления в заголовке Токена тоже работает при методе POST)
+#### ========-> Отправка формы AJAX (И без отправления в заголовке Токена тоже работает при методе POST !!!)
 Если через метод GET - то норм все отправляеться нормально (пишешь в маршрутах путь, потом отсылаешь данные туда)    
 Метод POST - по-другому ---- надо вставить в начало страницы такое : <meta name="csrf-token" content="{{ csrf_token() }}" />
 и в ajax.js прописать настройки(заголовки) для ajax:
@@ -51,3 +51,6 @@
 
 #### ========-> При вставке может возникнуть ошибка SQL с словом Update_at или Created_at - это ругаеться на timestamp
 Решение : написать в классe той модели которой юзаешь----: public $timestamps = false;
+
+### ========->Регистрация своего Middleware(filters) в файле Kernel.php массив $routeMiddleware(не глобал), $middleware(глобал)
+              'myauth' => \App\Http\Middleware\AuthMiddleware::class, // My Middleware
