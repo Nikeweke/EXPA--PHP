@@ -51,3 +51,20 @@
                        Notify('fa fa-remove', data['message'], '','','attached','bouncyflip');
                      }
                });
+
+
+
+
+  /***********************************************************
+    *   Перехватчик клавиш
+    *
+    ********************************************************/
+ app.controller("Lists", function($scope, $http)
+ {
+   
+    $scope.KeyCatch = function(keyEvent,titleItem, listId)
+    {
+        // Добавить запись в список по нажатию на "Enter"
+        if (keyEvent.which === 13){ $scope.addItem(titleItem, listId);  }
+    }
+  });    
