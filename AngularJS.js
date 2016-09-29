@@ -1,5 +1,5 @@
 /******************************************
-*   Передать свой заголовок в запросе
+*   Передать свой заголовок в запросе (CONTROLLER-local)
 *
 ******************************************/
  app.controller("Lists", function($scope, $http)
@@ -9,6 +9,24 @@
   }); 
   
   
+
+
+
+
+/******************************************
+*   Передать свой заголовок в запросе ( MODULE-global )
+*
+******************************************/
+var app = angular.module('MyApp', ['ngSanitize']).config(["$httpProvider", function($httpProvider) {
+
+   // ставим в запросы Uid
+    $httpProvider.defaults.headers.common.Uid = GetCookie('Uid');
+
+/*  $httpProvider.defaults.headers.put['Content-Type'] =   'application/x-www-form-urlencoded';
+  $httpProvider.defaults.headers.post['Content-Type'] =   'application/x-www-form-urlencoded'; */
+}]);
+
+
   
   
 /******************************************
