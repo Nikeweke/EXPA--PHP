@@ -1,3 +1,20 @@
+
+/***********************************************************
+*   Создание контроллера 2(варианта)
+*
+********************************************************/
+// 1 Variant
+angular.
+     module('myApp').
+     controller('myController', function($scope){....});
+
+// 2 Variant
+app.controller('MyController', function($scope){...}); // where app = angular.module(....)
+
+                                                
+                                                
+                                                
+
 /******************************************
 *   Передать свой заголовок в запросе (CONTROLLER-local)
 *
@@ -20,7 +37,7 @@
 var app = angular.module('MyApp', ['ngSanitize']).config(["$httpProvider", function($httpProvider) {
 
    // ставим в запросы Uid
-    $httpProvider.defaults.headers.common.Uid = GetCookie('Uid');
+    $httpProvider.defaults.headers.common.myHeader = 'Hello goat';
 
 /*  $httpProvider.defaults.headers.put['Content-Type'] =   'application/x-www-form-urlencoded';
   $httpProvider.defaults.headers.post['Content-Type'] =   'application/x-www-form-urlencoded'; */
@@ -85,4 +102,8 @@ var app = angular.module('MyApp', ['ngSanitize']).config(["$httpProvider", funct
         // Добавить запись в список по нажатию на "Enter"
         if (keyEvent.which === 13){ $scope.addItem(titleItem, listId);  }
     }
-  });    
+  }); 
+
+
+
+
