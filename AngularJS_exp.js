@@ -4,9 +4,9 @@
 *
 ********************************************************/
 // 1 Variant
-angular.
-     module('myApp').
-     controller('myController', function($scope){....});
+angular
+     .module('myApp')
+     .controller('myController', function($scope){....});
 
 // 2 Variant
 app.controller('MyController', function($scope){...}); // where app = angular.module(....)
