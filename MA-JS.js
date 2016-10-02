@@ -59,6 +59,32 @@ function SetCookie(name,value)
      DelCookie('Login');
      location.href = "login.html";
   }
+
+/***********************************************************
+*   Шифриуем куки
+*
+*   @param array - Cookies - наши куки для шифра
+********************************************************/
+function CookieEncoder(Cookies)
+ {
+    Cookies = JSON.stringify(Cookies); // в одну строку с помощью JSON
+    Cookies = btoa(Cookies);          // шифр
+    return Cookies;                    // возврат
+ }
+
+
+
+/***********************************************************
+*   Дешифриуем куки
+*
+*   @param array - Cookies - наши куки для розшифра
+********************************************************/
+function CookieDecoder(Cookies)
+{
+  Cookies = atob(Cookies);          // дешифр
+  Cookies = JSON.parse(Cookies);    // из JSON в массив
+  return Cookies;                    // возврат
+ }
  // ................................................................................................. COOKIES
 
 
