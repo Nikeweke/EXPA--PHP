@@ -21,3 +21,34 @@ var server = http.createServer(function (request, response)
 
 // запускаем
 server.listen(7000);
+
+
+
+
+
+/******************************************************
+*   Подключение одного файла к другому (count.js -> app.js)
+*
+*******************************************************/
+//-----count.js
+counter = function(arr){ return 'There are ' + arr.length; };
+function counter1(a,b){  return `There is ${a+b}`;  };
+var pi = 3.4;
+
+ // 1 Case of Exports
+ module.exports = {
+   counter: counter,
+   counter1: counter1,
+   pi: pi
+ };
+
+ // 2 Case of Exports
+module.exports.counter = counter;
+module.exports.counter1 = counter1;
+module.exports.pi = pi;
+
+//------app.js
+stuff = require('./stuff')
+
+console.log(stuff.counter(['shit', 'crystal']))
+console.log(stuff.counter1(1,2))
