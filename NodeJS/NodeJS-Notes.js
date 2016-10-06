@@ -52,3 +52,42 @@ stuff = require('./stuff')
 
 console.log(stuff.counter(['shit', 'crystal']))
 console.log(stuff.counter1(1,2))
+
+
+
+
+/******************************************************
+*   Вызов событий (event Emitter)
+*
+*******************************************************/
+events = require('events'); // подключение событий
+util   = require('util'); // подключение Ютиля, для унаследования
+
+// создаем функцию
+var Person = function(name){
+  this.name = name;
+};
+
+// говорим что функция "Person" имеет свойство ловить события когда они происходят и выводит соответствуещие функции
+util.inherits(Person, events.EventEmitter);
+
+// создаем пару обектов функции  "Person"
+var james = new Person('james');
+var mary = new Person('mary');
+
+// набиваем обьектами массив
+var people = [james, mary];
+
+// прокручаем массив при этом подставляя каждый обьект
+people.forEach(function(person)
+ {
+   person.on('speak', function(msg) // если случаеться собитие 'speak' выдаеться сообщение
+    {
+        console.log(person.name + ' said: ' + msg);
+    })
+})
+
+// запуск событий
+james.emit('speak', 'Shit man');
+mary.emit('speak', 'For Faken sake');
+
