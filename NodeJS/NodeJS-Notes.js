@@ -114,3 +114,38 @@ fs.readFile('shit.txt', 'utf8', function(err, data)
   fs.writeFile('writeMe.txt', data);
 })
 //------------------------
+
+
+
+
+
+/******************************************************
+*   Создание и удаление файлов, папок
+*
+*******************************************************/
+var fs = require('fs'); // подключаем библиотеку для чтения и записи файла
+
+// удлалить файл в папке "" и удалить саму папку. Удалить папку если она не пуста не выйдет
+fs.unlink('./stuff/writeMe.txt', function()
+ {
+    fs.rmdir('stuff');
+  })
+
+// ------------------------- Sync
+// создать директорию
+fs.mkdirSync('stuff');
+
+// удалить директорию
+fs.rmdirSync('stuff');
+// ------------------------- Sync
+
+// ------------------------- ASync
+fs.mkdir('stuff', function()
+ {
+     fs.readFile('readMe.txt', 'utf8', function(err, data)
+      {
+        fs.writeFile('./stuff/writeMe.txt', data);
+      });
+ })
+// ------------------------- ASync
+
