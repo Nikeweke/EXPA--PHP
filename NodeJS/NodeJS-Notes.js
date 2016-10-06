@@ -91,3 +91,24 @@ people.forEach(function(person)
 james.emit('speak', 'Shit man');
 mary.emit('speak', 'For Faken sake');
 
+
+
+/******************************************************
+*   Запись и чтения из файла(txt)
+*
+*******************************************************/
+var fs = require('fs'); // подключаем библиотеку для чтения и записи файла
+
+//------------------------ ....FileSync - указывает на то что пока не прочитаю файл до конца не пойду дальше - Синхронно
+var shitTxt = fs.readFileSync('shit.txt', 'utf8'); // читаем файла
+console.log(shitTxt); // выводим
+
+fs.writeFileSync('writeMe.txt', shitTxt); // создает и пишет в него то что есть в файле "shit.html"
+//------------------------
+
+//------------------------ ....File - указывает на то что код пойдет выполянться дальше - Асинхрон
+fs.readFile('shit.txt', 'utf8', function(err, data)
+{
+  fs.writeFile('writeMe.txt', data);
+})
+//------------------------
