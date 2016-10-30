@@ -9,18 +9,26 @@
 *   Созданеи сервера
 *
 *******************************************************/
-// подключение в переменную http - модуля "http"
 var http = require('http');
 
-// делаем серевер
-var server = http.createServer(function (request, response)
-{
-    response.writeHead(200, {"Content-Type": "text/plain"});
-    response.end("HEllow World\n");
-})
+// создать сервер
+var server = http.createServer(function(req, res)
+             {
+                // пишем Headers для нормальонго отображения текста
+                res.writeHead(200, {'Content-Type': 'text/plain'})
 
-// запускаем
-server.listen(7000);
+                // вывести какой запрос был
+                console.log('request was made: ' + req.url);
+
+                // отсылаем ответ
+                res.end('Shit');
+             });
+             
+// запуск сервера
+server.listen(3000, '127.0.0.1');
+
+console.log('Server is Launched');
+
 
 
 
