@@ -157,3 +157,44 @@ fs.mkdir('stuff', function()
  })
 // ------------------------- ASync
 
+
+
+
+// * ###  Пишущие и читающие потоки и Буферы ###
+//  Разница между этим способом и fs.writeFile & fs.ReadFile
+//  - с потоками вроде как быстрее из-за разбивание на кусочки инфы
+
+/******************************************************
+*  Читаем файл через поток (прикол в чем: в том что если файл большой то он передаеться частями)
+*
+*******************************************************/
+var fs = require('fs');
+
+var myReadStream = fs.createReadStream(__dirname + '/shit.txt', 'utf8');
+
+myReadStream.on('data', function(chunk)
+ {
+    console.log('chunk:');
+    console.log(chunk);
+ });
+
+
+
+/******************************************************
+*  Читаем файл через поток и записываем в другой файл через пишущий поток
+*
+*******************************************************/
+var fs = require('fs');
+
+var myReadStream = fs.createReadStream(__dirname + '/shit.txt', 'utf8'); // создание потока который читает
+var WStream = fs.createWriteStream(__dirname + '/Wshit.txt'); // создание потока который пишет
+
+myReadStream.on('data', function(chunk)
+ {
+    // вывод того что прочитали
+    console.log('chunk:');
+    console.log(chunk);
+
+    // пишем в наш поток из файла данные
+    WStream.write(chunk);
+ });
