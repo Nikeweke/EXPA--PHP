@@ -48,7 +48,7 @@ module.exports.counter1 = counter1;
 module.exports.pi = pi;
 
 //------app.js
-stuff = require('./stuff')
+stuff = require('./count')
 
 console.log(stuff.counter(['shit', 'crystal']))
 console.log(stuff.counter1(1,2))
