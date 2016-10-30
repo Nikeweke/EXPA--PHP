@@ -7,7 +7,7 @@
 - там нужно будет создать консоль то там комманда не make:console , а make:command
 - чтобы юзать комманду надо в файле Kernel.php в массив $commands добавить путь к нашему файлу : \App\Console\Commands\ChatServer::class,
 
-### С Ратчетом + ZeroMQ можно уже делать полный общение сервера и клиента
+### С Ратчетом + ZeroMQ можно уже делать полный общение сервера и клиента (НЕ работает - не удаеться сделать апдейт из-за phpzmq.dll)
 - Интструкция по установке ZeroMQ http://superuser.com/questions/585291/installing-zeromq-on-windows-7-wamp-server#answer-774973
 - ссылыч на библиотеку http://pecl.php.net/package/zmq/1.1.2/windows
 
