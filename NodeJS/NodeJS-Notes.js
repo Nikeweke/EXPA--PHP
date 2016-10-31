@@ -238,3 +238,57 @@ server.listen(3000, '127.0.0.1');
 console.log('Server is Launched');
 
 
+
+/******************************************************
+*  Вывод HTML-страниц
+*
+*******************************************************/
+var http = require('http'); // http
+var fs = require('fs'); // Read and Write Stream
+
+ // создать сервер
+   var server = http.createServer(function(req, res)
+                {
+                    res.writeHead(200, {'Content-Type': 'text/html'}) // пишем  для  отображения html
+                  // res.writeHead(200, {'Content-Type': 'text/html'}) // пишем  для  отображения обычного текста
+
+                   // вывести какой запрос был
+                   console.log('request was made: ' + req.url);
+
+                   var RStream = fs.createReadStream(__dirname + '/index.html', 'utf8'); // создание потока который читает
+
+                   // отсылаем ответ
+                   // html-страница
+                   RStream.pipe(res);
+                });
+
+   // запуск сервера
+   server.listen(3000, '127.0.0.1');
+
+   console.log('Server is Launched');
+
+
+/******************************************************
+*  Вывод JSON-данных
+*
+*******************************************************/
+var http = require('http'); // http
+
+ // создать сервер
+   var server = http.createServer(function(req, res)
+                {
+                    res.writeHead(200, {'Content-Type': 'application/json'}) // пишем  для  отображения json
+
+                    var myJson = {
+                                   name:     "James",
+                                   surname:  "Hetfield",
+                                   age:       50
+                                 };
+                    res.end(JSON.stringify(myJson));
+
+                });
+
+   // запуск сервера
+   server.listen(port, '127.0.0.1');
+
+   console.log('Server is Launched on port ' + port);
