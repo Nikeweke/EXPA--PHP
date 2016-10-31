@@ -1,5 +1,8 @@
 // # Node PACKAGE MANAGER
 
+----> Сделать Package.json для слежения за установлеными пакетами
+npm init
+
 ----> Чтобы установить пакет  в папке через Гит-Баш, но при этом не записывает в PACKAGE.JSON
 npm install namePackage
 
