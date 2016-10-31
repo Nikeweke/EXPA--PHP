@@ -198,3 +198,43 @@ myReadStream.on('data', function(chunk)
     // пишем в наш поток из файла данные
     WStream.write(chunk);
  });
+
+
+/******************************************************
+*  Трубы (Pipes)(Автоматическое перенаправление читающего потока в пишущий для записи или вывода )
+*
+*******************************************************/
+var fs = require('fs');
+
+var RStream = fs.createReadStream(__dirname + '/shit.txt', 'utf8'); // создание потока который читает
+var WStream = fs.createWriteStream(__dirname + '/Wshit.txt'); // создание потока который пишет
+
+// Направить прочитанную информацию для записи в файл
+RStream.pipe(WStream);
+
+/// ** Antoher Example ** \\\
+var http = require('http');
+var fs = require('fs');
+
+// создать сервер
+var server = http.createServer(function(req, res)
+             {
+                // пишем Headers для нормальонго отображения текста
+                res.writeHead(200, {'Content-Type': 'text/plain'})
+
+                // вывести какой запрос был
+                console.log('request was made: ' + req.url);
+
+                var RStream = fs.createReadStream(__dirname + '/shit.txt', 'utf8'); // создание потока который читает
+
+                // отсылаем ответ 
+                // данные прочитаные с файла отдаем в ответ
+                RStream.pipe(res);
+             });
+
+// запуск сервера
+server.listen(3000, '127.0.0.1');
+
+console.log('Server is Launched');
+
+
