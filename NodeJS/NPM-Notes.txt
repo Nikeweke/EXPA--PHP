@@ -1,0 +1,8 @@
+// # Node PACKAGE MANAGER
+
+----> Чтобы установить пакет  в папке через Гит-Баш
+npm install namePackage
+
+
+----> Чтобы удалить пакет  в папке через Гит-Баш
+npm uninstall namePackage
