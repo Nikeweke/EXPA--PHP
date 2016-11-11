@@ -345,24 +345,34 @@ function Action(button, page)
       // button - это нажатая кнопка
      // page - на какой странице, в основном это статья полная
 
-     $.ajax({
-             url:     "inc/core.php", //Адрес подгружаемой страницы
-             type:     "POST", //Тип запроса
-             dataType: "html", //Тип данных
-             data: ({btn : button, page_id : page }),
-             success: function(response) {
+      $.ajax({
+              type: 'POST',
+              async: false,
+              url: url,
+            //  dataType: 'json',
+              data : postData,
+              success: function(data)
+                         {
+                           // data['message']
 
-                                             /*
-                                                Здесь response - это ответ с сервера , ловим ехо от PHP;
-                                                потом применяеться фукнция $.trim() так как в переменной много пробелов как сначала так и в конце
-                                             */
-                                             var resp = $.trim(response);
-                                            //   alert(resp);
+                            if(data['success']) // true or 1
+                              {
+                                  // Сообщение об удаче
+                                BNotify('check', data['message'], '','success', 'bottom', 'center');
+                                setInterval('location.href = "/home/"; ', 1000); // переброс через секунду на главную
+                               }
 
-                                          },
-
-         error: function(response) { alert("ERROR!!"); }
-      });
+                           else{ // 0 or false
+                             // Сообщение об провале
+                             BNotify('report', data['message'], '','danger', 'bottom', 'center');
+                              }
+                         },
+               error: function (xhr, ajaxOptions, thrownError)
+                       {
+                         alert(xhr.status);
+                         alert(thrownError);
+                       }
+            })
 }
 
 
