@@ -1,4 +1,4 @@
-# Node PACKAGE MANAGER
+# Node PACKAGE MANAGER или NPM
 
 #### Сделать Package.json для слежения за установлеными пакетами
 ```
