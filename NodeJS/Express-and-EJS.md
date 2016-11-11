@@ -6,7 +6,7 @@
 
 ## Express.js
 
-*   Подключение и инициализация Express.js
+####   Подключение и инициализация Express.js
 ```javascript
 // Библиотеки
 var express = require('express'); // express framework
