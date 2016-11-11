@@ -19,8 +19,11 @@ npm install namePackage
 
 #### Чтобы установить пакет  в проект, и записать его в **Package.json**
 > (зачем? для того чтобы следить и знать какие пакеты установены в проекте)
+```
 npm install namePackage -save
-
+```
 
 #### Чтобы удалить пакет  в папке через Гит-Баш
+```
 npm uninstall namePackage
+```
