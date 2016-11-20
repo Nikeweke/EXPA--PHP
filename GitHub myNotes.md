@@ -1,3 +1,26 @@
+### pusher.bat
+```
+cd D:\path\to\project
+git init
+git remote add origin https://Nickname:password@bitbucket.org/Nickname/project.git
+git add .
+git commit -m"new coomit"
+git push -u origin master
+```
+
+
+
+#### push.bat
+```
+cd D:\path\to\project
+git add .
+git commit -m"new coomit"
+git push
+
+
+
+
+
 // Открыть в папке с проектом Git Bash, правой кнопкой наход¤сь в папке проекта
 
 // При создание репозитори¤ на сайте GitHub не создавать файл Readme.md или создать а потом запулить себе на комп, а потом
@@ -195,18 +218,4 @@ git branch -v
 
 // ************************************************ ПОСЛЕДОВАТЕЛЬНОСТЬ РАБОТЫ
 
-// ************************************************ push.bat
-cd D:\path\to\project
-git add .
-git commit -m"new coomit"
-git push
-// ************************************************ push.bat
 
-// ************************************************ pusher.bat
-cd D:\path\to\project
-git init
-git remote add origin https://Nickname:password@bitbucket.org/Nickname/project.git
-git add .
-git commit -m"new coomit"
-git push -u origin master
-// ************************************************ pusher.bat
