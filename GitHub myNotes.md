@@ -16,6 +16,7 @@ cd D:\path\to\project
 git add .
 git commit -m"new coomit"
 git push
+```
 
 
 
