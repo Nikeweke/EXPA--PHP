@@ -1,7 +1,92 @@
+###  LET IT SNOW
+
+``` javascript
+// HOW TO USE in HTML: <canvas id="sky"></canvas>
+
+window.onload = function(){
+
+    // get the canvas and context and store in vars
+    var canvas = document.getElementById("sky");
+    var ctx    = canvas.getContext("2d");
 
 
+    // set canvas dims to window height and width
+    var W  =  window.innerWidth;
+    var H  =  window.innerHeight;
+    canvas.width    =   W;
+    canvas.height   =   H;
 
- // ................................................................................................. COOKIES
+    // generate the snowflakes and apply attributes
+    var mf     =  100;  // max flakes
+    var flakes = [];
+
+    // loop through the empty flakes and apply attributes
+    for(var i = 0; i < mf; i++)
+     {
+       snow = {
+                x: Math.random()*W,
+                y: Math.random()*H,
+                r: Math.random()*5+2,  // min of 2px and max of 7px
+                d: Math.random()*1,   // density of the flake
+              }
+
+       flakes.push(snow);
+     }
+
+
+     // dras flakes onto canvas
+     function drawFlakes()
+      {
+        ctx.clearRect(0, 0, W, H)
+        ctx.fillStyle = "white";
+        ctx.beginPath();
+
+        for(var i = 0; i < mf; i++)
+         {
+           var f = flakes[i];
+           ctx.moveTo(f.x, f.y);
+           ctx.arc(f.x, f.y, f.r, 0, Math.PI*2, true);
+         }
+
+         ctx.fill();
+         moveFlakes();
+      }
+
+
+      // animate the flakes
+      var angle = 0;
+
+      function moveFlakes()
+       {
+         angle += 0.01;
+
+         for(var i = 0; i < mf; i++)
+          {
+            var f = flakes[i];
+
+            f.y  +=  Math.pow(f.d, 2) + 1;
+            f.x  +=  Math.sin(angle) * 2;
+
+            // if snowflake reaches the bottom , send a new one to the top
+             if(f.y > H)
+              {
+                flakes[i] = {
+                              x: Math.random()*W,
+                              y: 0,
+                              r: f.r,
+                              d: f.d
+                            }
+              }
+          }
+       }
+
+       setInterval(drawFlakes, 25);
+}
+```
+
+## COOKIES
+
+``` javascript
  /***********************************************************
  *  Получить куки
  *
@@ -85,12 +170,12 @@ function CookieDecoder(Cookies)
   Cookies = JSON.parse(Cookies);    // из JSON в массив
   return Cookies;                    // возврат
  }
- // ................................................................................................. COOKIES
+```
 
 
 
 
-
+``` javascript
 /***********************************************************
 *   Возвращает отформатированную сегодняшнюю дату
 *
@@ -158,12 +243,14 @@ function isEmpty(object)
 {
   return JSON.stringify(object) == "{}";
 }
+```
 
 
 
 
+## BOOTSRAP func   */
 
-/* *********************************************************************** BOOTSRAP func   */
+``` javascript
 // JUMP TO TOP
 $(document).ready(function(){
       $('body').append('<div id="toTop" class="btn ma-btn"><span class="glyphicon glyphicon-chevron-up"></span> Наверх</div>');
@@ -252,13 +339,14 @@ function PowerPass(field){
             })
 }
 
-/* *********************************************************************** BOOTSRAP func   */
+```
 
 
 
 
 
-//********************************************************************************** SIMPLE FUNCTIONS
+## SIMPLE FUNCTIONS
+``` javascript
 
 //Показывает обьект который пришел как атрибут (JQUERY)
 function ShowObject(el){ $("#"+el).show('blind',600); }
@@ -296,13 +384,13 @@ function HeadPage(page)
    document.location.href = page;
  }
 
-//********************************************************************************** SIMPLE FUNCTIONS
+```
 
 
 
 
-//**********************************************************************************  AJAX-FUNCTIONS
-
+## AJAX-FUNCTIONS
+``` javascript
 /* **************** Функция для действий от которых не надо ответ (Likes , Viewed pages)  */
 
 /* Функция для вывода данных  */
@@ -435,12 +523,13 @@ function SendForm(form_id,page_id)
       });
 }
 
-//********************************************************************************** AJAX-FUNCTIONS
+```
 
 
 
 
-//********************************************************************************** Alerts
+## Alerts
+``` javascript
 function Alertik(msg, type)
  {
    // DANGER
@@ -462,13 +551,14 @@ function Alertik(msg, type)
 		});
 	}, 6000);
 }
-//********************************************************************************** Alerts
+```
 
 
 
 
 
-//********************************************************************************** Вызов на каждой странице
+## Вызов на каждой странице
+``` javascript
     //  TOOLTIPS
     Tooltip('domik','Главная','left');
     Tooltip('angrydog','DD','right');
@@ -484,4 +574,5 @@ function Alertik(msg, type)
 
     // Проверка на прочность пароля
     PowerPass('password');
-//********************************************************************************** Вызов на каждой странице
+```
+
