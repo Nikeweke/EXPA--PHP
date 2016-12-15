@@ -47,7 +47,7 @@ setInterval(DivOut,60000,'msges_div', $towho_id, '$towho_nick');
 <body onkeydown="if ( event.which == 13 ){myFunction();}">
 ```
 
-### Очистка <TEXTAREA>
+### Очистка поля
 ```
 $('#textarea_msg').val('');
 ```
