@@ -34,7 +34,7 @@
 
 
 ### Функция для странички message как пример с обновой через каждые 3 сек.
-```
+```javascript
 setInterval('AjaxOut(\'tasks\')',3000);
 
 DivOut('msges_div', $towho_id, '$towho_nick');
@@ -43,12 +43,12 @@ setInterval(DivOut,60000,'msges_div', $towho_id, '$towho_nick');
 
 
 ### По нажатию кнопка ЕНТЕР выполнить функцию
-```
+```html
 <body onkeydown="if ( event.which == 13 ){myFunction();}">
 ```
 
 ### Очистка поля
-```
+```javascript
 $('#textarea_msg').val('');
 ```
 
@@ -59,18 +59,18 @@ $('#textarea_msg').val('');
 ```
 
 ### Финт для НОВОСТНЫХ ПОРТАЛОВ
-```
-чтобы вывести название статьи в <title>
-просто поставь в цикл вывод её
-вот так:
+```php
+//чтобы вывести название статьи в <title>
+//просто поставь в цикл вывод её
+//вот так:
 
 			while($data = ...)
 			 {
 			  <title>$data['article']</title>
 			 }
 
-а вообще надо юзать шаблонизатор
-
+//а вообще надо юзать шаблонизатор
+```
 ---
 
 
