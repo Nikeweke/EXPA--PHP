@@ -1,6 +1,6 @@
-### XMAS Lights
+## XMAS Lights
 
-##### css
+#### css
 ```css
 #wire{
 text-align: center;
@@ -74,7 +74,7 @@ height: 100px;
   }
 }
 ```
-##### html
+#### html
 ```html
   <ul  id="wire">
         <li></li>
