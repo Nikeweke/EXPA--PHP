@@ -104,7 +104,7 @@ $('#textarea_msg').val('');
 				   на системах Windows будет работать, но не на сервере где система Unix
 ```				   
 ```
-//  Настройка .HTACCESS для ЧПУ
+               Настройка .HTACCESS для ЧПУ
 		AddDefaultCharset utf-8
 
 		RewriteEngine On
@@ -114,7 +114,6 @@ $('#textarea_msg').val('');
 
 		RewriteRule ^([a-z]+)/([0-9]+)$ index.php?con=$1&id=$2&%{QUERY_STRING} [NS,L]
 		RewriteRule ^index$ index.php [QSA,L]
-// 
 ```
 
 ---
@@ -128,7 +127,6 @@ $('#textarea_msg').val('');
 
 
 # SQL - REQUESTS                                             
-```
 .............................................................................-> СОЗДАНИЕ ПРОЦЕДУР
 /************************************************************
 *   Вызов процедуры в php
@@ -408,7 +406,6 @@ time_reg TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) DEFAULT CHARACTER SET utf8 ENGINE = MYISAM
 --------------------------------------------------
 .............................................................................-> СОЗДАНИЕ ТАБЛИЦ
-```
 
 
 
@@ -416,7 +413,6 @@ time_reg TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
 
 #  PHP - SOLUTIONS  
 
-```
 /************************************************************
 *   FROM MySQLi - TO PDO
 *
@@ -490,4 +486,3 @@ function checkForPass()
 	}
 ?>
 --------------------------------------------------
-```
