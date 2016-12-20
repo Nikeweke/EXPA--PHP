@@ -52,32 +52,22 @@ var app = angular.module('MyApp', ['ngSanitize']).config(["$httpProvider", funct
 ##   Развернутая функция $http
 ```javascript
 $http({
-                   url: url,
-                   method: method,
-                   data: postData,
-                   headers: {
-                       'Uid': GetCookie('Uid')
-                     }
-               })
-               .then(function(response) {
+            method: 'GET',
+            url: '/friends/dialog',
+            params: {user: userId},
+            // headers: {'Authorization': 'Token token=xxxxYYYYZzzz'}
+                })
+                 .success(function(data)
+                  {
+                   // With the data succesfully returned, call our callback
+                    callbackFunc(data);
+                  })
 
-                    // прием данных ( Вот это важная СТРОКА без нее нельзя получить данные из Response)
-                    data = response.data;
-
-                    // при успехе
-                     if(data['success'])
-                      {
-                        // Сообщение об удаче
-                        Notify('fa fa-check', data['message'], '','','attached','bouncyflip');
-                        $scope.GetLists(); // обновить списки
-                     }
-
-                    // при ошибке
-                     else{
-                       // Сообщение об ошибке
-                       Notify('fa fa-remove', data['message'], '','','attached','bouncyflip');
-                     }
-               });
+                .error(function(xhr, ajaxOptions, thrownError)
+                 {
+                   alert(xhr.status);
+                   alert(thrownError);
+                  });
 ```
 
 
