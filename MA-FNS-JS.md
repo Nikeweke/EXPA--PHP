@@ -460,7 +460,7 @@ function DivOut(obj,page_id)
 
 
 
-/* Функция для одиночных действий , которым не нужнен тег <form>  */
+### Функция для одиночных действий , которым не нужнен тег FORM
 ``` javascript
 function Action(button, page)
  {
