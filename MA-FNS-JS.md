@@ -1,3 +1,15 @@
+###  MOMENT.js - как получить время на русском
+```javascript
+function GiveRelativeTime(date)
+ {
+   // date  - 2016-12-20 14:33:22(YYYY-MM-DD HH:mm:ss)
+   
+   var now  =  moment().locale('ru');
+   var date =  moment(date).locale('ru');
+   return date.from(now) // "день назад или какая там дата"
+ }
+```
+
 ### Получение данных с формы(div, form)
 ```javascript
 function GetData(obj_form)
