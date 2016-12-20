@@ -1,3 +1,21 @@
+### Получение данных с формы(<div>,<form>)
+```javascript
+function GetData(obj_form)
+  {
+     var hData = {};
+
+     $('input, select, textarea', obj_form).each(function()
+     {
+          if(this.name && this.name != '')
+           {
+             hData[this.name] = this.value;
+             console.log('hData[' + this.name + '] = ' + hData[this.name]);
+           }
+     });
+     return hData;
+   }
+```
+
 ### Функция для того чтобы взять значение из массива GET(localhost/?user=...)
 ``` javascript
 function getParameterByName(name, url) {
