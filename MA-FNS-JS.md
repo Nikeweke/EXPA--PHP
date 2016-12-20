@@ -1,4 +1,4 @@
-### Получение данных с формы(<div>,<form>)
+### Получение данных с формы(div, form)
 ```javascript
 function GetData(obj_form)
   {
