@@ -456,11 +456,12 @@ function DivOut(obj,page_id)
          error: function(response) { alert("ERROR!!"); }
       });
 }
-
+```
 
 
 
 /* Функция для одиночных действий , которым не нужнен тег <form>  */
+``` javascript
 function Action(button, page)
  {
       // button - это нажатая кнопка
@@ -495,66 +496,42 @@ function Action(button, page)
                        }
             })
 }
+```
 
 
 
-
-/* ****************  Функция для отправки <FORM>  */
-function SendForm(form_id,page_id)
+###  Развернутый AJAX запрос
+``` javascript
+function SendForm()
  {
+      $.ajax({
+              type: 'POST',
+              async: false,
+              url: url,
+            //  dataType: 'json',
+              data : postData,
+              success: function(data)
+                         {
+                           // data['message']
 
-     /*
-        form_id - это форма <form>
-        page_id - страница статьи
-     */
+                            if(data['success']) // true or 1
+                              {
+                                  // Сообщение об удаче
+                                BNotify('check', data['message'], '','success', 'bottom', 'center');
+                                setInterval('location.href = "/home/"; ', 1000); // переброс через секунду на главную
+                               }
 
-
-     $.ajax({
-             url:     "inc/core.php", //Адрес подгружаемой страницы
-             type:     "POST", //Тип запроса
-             dataType: "html", //Тип данных
-             data: $("#"+form_id).serialize(),
-             success: function(response) {
-
-                 /*
-                    Здесь response - это ответ с сервера , ловим ехо от PHP;
-                    потом применяеться фукнция $.trim() так как в переменной много пробелов как сначала так и в конце
-                 */
-                  var resp = $.trim(response);
-                  // alert(resp);
-
-
-               // Форма ОТЗЫВА
-               if(form_id == "recall_form"){  $("#answer_dd" ).html(resp); }
-
-               //  Оставляем КОММЕНТАРИЙ
-               if(form_id == "coments_form")
-                {
-                   DivOut('coments_div',page_id) ; /* Обновить комменты чтобы увидеть новый */
-                   $("#answer_comment" ).html(resp);
-                 }
-
-
-                 // РЕГИСТРАЦИЯ И ВХОД (en_form & reg_form)
-                if(form_id == "reg_form" || form_id == "en_form")
-                 {
-                         /******************   Ответы с сервера ************/
-                        var ans = "Вход"; /* Ответ для формы входа */
-                        var ans1 = "Вы успешно зарегестрировались! Перейти на <a href=\"index.php\">главную</a>"; /* Ответ для формы регистрации */
-
-                         /******************   Если все хорошо ************/
-                        if(resp == ans){ document.location.href = "index.php"; } /* ENTER-form */
-                        if(resp == ans1){ $("#msg_success_reg").show( function(){ $('#msg_success_reg').html("<h4>" + glyph + " " + resp + "</h4>"); }); }  /* REG-form */
-
-                        /******************  Если все плохо  ************/
-                        if(form_id == "en_form" && resp != ans){  Alertik(resp,'D'); } /* ENTER-form */
-                        if(form_id == "reg_form" && resp != ans1){ Alertik(resp,'D');} /* REG-form  */
-                  }
-                                 },
-
-         error: function(response) { alert("ERROR in SendForm() Ajax!!"); }
-      });
-}
+                           else{ // 0 or false
+                             // Сообщение об провале
+                             BNotify('report', data['message'], '','danger', 'bottom', 'center');
+                              }
+                         },
+               error: function (xhr, ajaxOptions, thrownError)
+                       {
+                         alert(xhr.status);
+                         alert(thrownError);
+                       }
+            })
 
 ```
 
