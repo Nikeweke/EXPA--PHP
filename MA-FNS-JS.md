@@ -1,4 +1,4 @@
-###  MOMENT.js - как получить время на русском
+###  MOMENT.js - как получить время словами и на русском
 ```javascript
 function GiveRelativeTime(date)
  {
