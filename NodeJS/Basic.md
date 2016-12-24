@@ -66,7 +66,7 @@ console.log(stuff.counter1(1,2))
 var events       =    require('');
 var eventEmitter =    new events.EventEmitter();
 
-function Hello(){ console.log('Hello m8's and goodbye'); }
+function Hello(){ console.log('Hello m8 and goodbye'); }
 
 eventEmitter.on('Boom', Hello)
 eventEmitter.emit('Boom');
