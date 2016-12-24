@@ -63,7 +63,7 @@ console.log(stuff.counter1(1,2))
 ####   Вызов событий (event Emitter)
 
 ```javascript
-var events       =    require('');
+var events       =    require('events');
 var eventEmitter =    new events.EventEmitter();
 
 function Hello(){ console.log('Hello m8 and goodbye'); }
