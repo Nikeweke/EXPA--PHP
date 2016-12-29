@@ -1,4 +1,4 @@
-### Комманды для "php artisan"
+### Комманды для "php artisan", в папке с проектом GitBash запустить
 * **1.   Создать контроллер**:                         php artisan make:controller NameController
 * **2.  Создать миграцию**:                           php artisan make:migration create_tasks_table --create=tasks     
 * **3.  Создать модель**:                             php artisan make:model Task  
@@ -55,8 +55,8 @@ $.ajaxSetup({
 
 ### Регистрация своего Middleware
 * в файле Http/Kernel.php есть два массива:
-   - $routeMiddleware: middleware которые не применяться ко всем роутам, там нужно регать свой middleware
-   - $middlewareGroups: стандартные middleware нужные для работы 
+   - **$routeMiddleware**: middleware которые не применяться ко всем роутам, там нужно регать свой middleware
+   - **$middlewareGroups**: стандартные middleware нужные для работы 
 ###### AuthMiddleware.php
 ```php
 namespace App\Http\Middleware;
