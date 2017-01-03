@@ -1,13 +1,13 @@
 ### Комманды для "php artisan", в папке с проектом GitBash запустить
 * **php artisan make:controller NameController** - Создать контроллер
 * **php artisan make:migration create_tasks_table --create=tasks** - Создать миграцию
-* **php artisan make:model Task ** - Создать модель
-* **php artisan make:model Name -m ** - Создать миграцию и модель
+* **php artisan make:model Task** - Создать модель
+* **php artisan make:model Name -m** - Создать миграцию и модель
 * **php artisan migrate** - Запуск миграций (создание таблиц)
 * **php artisan migrate:refresh —seed** - Вы также можете использовать для заполнения БД данными команду migrate:refresh, которая также откатит и заново применит все ваши миграции
 * **php artisan route:list** - Показать маршруты все (routes)
 * **php artisan db:seed** - Начальные данные для БД. Запускает метод run() из DatabaseSeeder(в него надо подключить все сиды) 
-* **php artisan make:seed NameSeed ** - Создание Seed'a
+* **php artisan make:seed NameSeed** - Создание Seed'a
 * **php artisan make:middleware NameMiddleware** -  создание Middleware
 
   
