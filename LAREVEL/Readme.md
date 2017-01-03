@@ -5,8 +5,9 @@
 * **4.  Создать миграцию и модель**:                 php artisan make:model Name -m     
 * **5. Запуск миграций (создание таблиц)**:          php artisan migrate
 * **6.  Просмотра маршрутов (routes)**:               php artisan route:list
-* **7.  DatabaseSeeder** - это тестовые записи в БД:  php artisan db:seed      
-* **8. Middleware** -                             php artisan make:middleware NameMiddleware  
+* **7.  DatabaseSeeder(начальные данные для БД)**:  php artisan db:seed      
+* **8.  Создание Seeder**:  php artisan make:seed NameSeed 
+* **9. Middleware** -                             php artisan make:middleware NameMiddleware  
   
 
 
