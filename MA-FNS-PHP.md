@@ -1,7 +1,3 @@
-<?php
-
-// LOGO
-$appname = "";
 
 
 ## Connection to DB
