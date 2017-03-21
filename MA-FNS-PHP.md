@@ -197,4 +197,3 @@ function valid_email($adress)
     else { return false; }
  }
 ```
-?>
