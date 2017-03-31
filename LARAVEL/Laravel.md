@@ -88,6 +88,7 @@ echo trans('validation.alert'); // выведет внимание
 ```
 
 ## Шаблонизатор(Blade)
+{{-- коммент --}}
 ###### IndexController.php
 ```php
 /// передача данных в шаблон
