@@ -6,7 +6,7 @@
 * [**Useful links**](#useful-links)
 * [**Как запустить встроенный сервер PHP**](#Как-запустить-встроенный-сервер-php)
 * [**Из массива в строку и ставим в Cookies**](#Из-массива-в-строку-и-ставим-в-cookies)
-* [**Closure(Anonymys func) and Reference vars**](#closure)
+* [**Closure(Anonymys func) and Reference vars**](#closureanonymys-func-and-reference-vars)
 * [**Traits**](#traits)
 * [**Namespace and Use**](#namespace-and-use)
 
