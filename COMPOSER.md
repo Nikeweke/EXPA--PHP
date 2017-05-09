@@ -1,3 +1,13 @@
+## Composer
+
+
+#### Содержание 
+* [**Composer подсказки**](#composer-подсказки)
+* [**Установка composer'a**](#Установка-composer-a)
+* [**Для использования в файл index.php**](#Для-использования-в-файл-index.php)
+
+---
+
 #### Composer подсказки: http://composer.json.jolicode.com/
 
 #### [Мой тест](https://github.com/Nikeweke/PHP-example-Composer)
