@@ -6,14 +6,14 @@
 * [**Useful links**](#useful-links)
 * [**Как запустить встроенный сервер PHP**](#Как-запустить-встроенный-сервер-php)
 * [**Из массива в строку и ставим в Cookies**](#Из-массива-в-строку-и-ставим-в-cookies)
-* [**Closure(Anonymys func) and Reference vars**](#Closure(Anonymys func) and Reference vars)
+* [**Closure(Anonymys func) and Reference vars**](#closure)
 * [**Traits**](#traits)
 * [**Namespace and Use**](#namespace-and-use)
 
 ---
 
 
-#### Useful links
+### Useful links
 * Composer CheatSheet: http://composer.json.jolicode.com/
 
 ### Как запустить встроенный сервер PHP:
@@ -79,17 +79,19 @@ setcookie('nabor', "", time() - 86400*100, "/");
 ###### index.php
 ```php
 <?php
-// $var = 2;
-// function foo(&$var)
-// {
-//     $var++;
-// }
-//
-// foo($var);
-//
-// echo $var;
+ 
+// reference by var 
+ $var = 2;
+ function foo(&$var)
+ {
+   $var++;
+ }
+
+ foo($var);
+ echo $var;
  
  
+ // Closure
 $message = 'hello';
  
 // No "use" out - NULL
@@ -106,35 +108,6 @@ $example = function () use ($message) {
 };
 $example();
  
- 
- 
-// Inherited variable's value is from when the function
-// is defined, not when called
-$message = 'world';
-$example();
- 
-// Reset message
-$message = 'hello';
- 
-// Inherit by-reference
-$example = function () use (&$message) {
-    echo "<br>third -> ";
-    var_dump($message);
-};
-$example();
- 
-// The changed value in the parent scope
-// is reflected inside the function call
-$message = 'world';
-$example();
- 
-// Closures can also accept regular arguments
-$example = function ($arg) use ($message) {
-  echo "<br>fourth -> ";
-    var_dump($arg . ' ' . $message);
-};
-$example("hello");
-
 ```
 
 
