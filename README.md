@@ -150,3 +150,61 @@ $some->Bye();
 
 
 ### Namespace and Use
+
+Файлы могут быть в одной папке, но иметь разные пространства имен. Например если в файлах одинаковые классы, то в таком случае зарешают пространства. В данном примере все файлы находяться в одной папке.
+
+
+###### class1.php
+```php
+<?php
+
+namespace App;
+
+class Index {
+
+	function Index(){
+	  echo "Hello dude, its App space";
+	  return ;  
+	}
+}
+
+```
+
+
+###### class2.php
+```php
+<?php
+
+namespace App\Models;
+
+class Index {
+	
+	function Index(){
+	  echo "Hello dude, its App\Models space";
+	  return; 
+	}
+}
+
+```
+
+
+###### index.php
+```php
+<?php
+
+include 'class1.php'; // тут класс с названием Index 
+include 'class2.php';  // и тут класс с таким же названием
+
+// без "use" классы не будут видны здесь, хоть они и подключены свыше
+use App\Index;
+use App\Models\Index as IndexModel;
+
+$index = new Index();
+$index->index();
+
+$grand = new IndexModel();
+$grand->index();
+```
+
+
+
