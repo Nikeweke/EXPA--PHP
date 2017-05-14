@@ -1,4 +1,68 @@
+###  FROM MySQLi - TO PDO
+```php
+mysqli_query($db,"...") = $db->query("...")
+mysqli_fetch_array($query) = $query->fetch(PDO::FETCH_ASSOC)
+mysqli_real_string_escape = prepare($query); $query->execute();
+mysqli_nums_row = $query->countRow()
+```
 
+
+###  Перехват ошибок
+```php
+<?php
+
+try { throw new Exception ('Это ошибка епты'); }
+
+catch(Exception $e)
+ {
+  echo "Исключение " . $e->getCode() . ": " . $e->getMessage() . "<br>" . " в " . $e->getFile() . ", строка "  . $e->getLine() . "<br>";
+  }
+?>
+```
+
+
+
+###   Передача переменных между PHP-файлами посредством сессии
+####   Можно использовать сессии, которые в отличие от cookie, храняться на сервере, и стираються после закрития браузера
+####  session_start() - на каждой странице где юзаеться сессия 
+```php
+ <?php
+  session_start();
+  $_SESSION['user'] = 'bonskii';
+?>
+
+//Обращаться к значению, сохранённому в сессии можно используя суперглобальный массив:
+
+ <?php
+  echo $_SESSION['user'];
+?>
+```
+
+
+###  Функция ругалась что не видела переменных $user_data, $e_password, $e_login
+####  и через global все работает
+```php
+<?php
+
+function checkForPass()
+ {
+	global $user_data;
+	global $e_password;  // or like that -> $GLOBALS['e_password'];
+	global $e_login;
+
+
+	  if($user_data['pass'] == $e_password)  // ** $e_password = $GLOBALS['e_password']
+						  {
+						   echo "<h2> You exist in database. </h2>";
+							echo "<h3> Welcome $e_login. </h3>";
+						  }
+
+						else
+						  {
+						  echo "Wrong password";
+                      }
+	}
+```
 
 ## Connection to DB
 ```php
