@@ -26,3 +26,8 @@ while( $row = $rez->fetchArray() ){
    echo $row['name'] . '<br>';
 }
 ```
+
+### Insert
+```php
+$this->query("INSERT INTO orks(id, name) VAlUES($id, $name)");
+```
