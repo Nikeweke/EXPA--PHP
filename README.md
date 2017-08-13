@@ -207,7 +207,7 @@ $grand = new IndexModel();
 $grand->index();
 ```
 
-### object of stdClass
+### Objects of stdClass
 Обьект класса `stdClass` это как объект в JS. После создания объекта внутри пусто , но это как объект(объект класса).
 ```php
  // создание обьекта
