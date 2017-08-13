@@ -10,6 +10,7 @@
 * [**Traits**](#traits)
 * [**Namespace and Use**](#namespace-and-use)
 * [**Objects of stdClass**](#objects-of-stdClass)
+* [**__autoload**](#autoload)
 
 ---
 
@@ -229,4 +230,24 @@ $func();
 ($obj->calc)(); 
 ```
 
+### __autoload
+Автоматичское подключение файлов с классами в которых есть нужные экземпляры
+###### ./index.php
+```php
+spl_autoload_register(function($class_name){
+	$filename = './ctrls/'.$class_name.'.php';
+	   // echo $class_name . PHP_EOL;
+	 include($filename);  
+});
 
+$obj = new Freak;
+$obj->Say();
+```
+
+###### ./ctrls/freak.php
+```php
+<?php
+class Freak{
+   public function Say(){ echo $this->words; }
+}
+```
