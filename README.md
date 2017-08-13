@@ -9,6 +9,7 @@
 * [**Closure(Anonymys func) and Reference vars**](#closureanonymys-func-and-reference-vars)
 * [**Traits**](#traits)
 * [**Namespace and Use**](#namespace-and-use)
+* [**objects of stdClass**](#)
 
 ---
 
@@ -206,5 +207,26 @@ $grand = new IndexModel();
 $grand->index();
 ```
 
+### object of stdClass
+Обьект класса `stdClass` это как объект в JS. После создания объекта внутри пусто , но это как объект(объект класса).
+```php
+ // создание обьекта
+$obj = new stdClass;
+
+// добавляем переменные
+$obj->name    = 'Joker';
+$obj->surname = 'Petrovich';
+
+// добавление ф-ции
+$obj->calc = function(){ echo 1 + 1; };
+
+print_r($obj);
+
+// вызов ф-ции
+$func = $obj->calc;
+$func(); 
+// OR
+($obj->calc)(); 
+```
 
 
