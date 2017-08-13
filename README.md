@@ -10,7 +10,7 @@
 * [**Traits**](#traits)
 * [**Namespace and Use**](#namespace-and-use)
 * [**Objects of stdClass**](#objects-of-stdClass)
-* [**__autoload**](#autoload)
+* [**__autoload**](#__autoload)
 
 ---
 
