@@ -9,7 +9,7 @@
 * [**Closure(Anonymys func) and Reference vars**](#closureanonymys-func-and-reference-vars)
 * [**Traits**](#traits)
 * [**Namespace and Use**](#namespace-and-use)
-* [**objects of stdClass**](#)
+* [**Objects of stdClass**](#objects-of-stdClass)
 
 ---
 
