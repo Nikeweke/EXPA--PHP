@@ -1,5 +1,7 @@
 ## Web-Сокеты PHP с библиотекой "Ратчет"
 
+https://github.com/ratchetphp/Ratchet
+
 ###### websockets.php 
 ```php
 <?php
@@ -49,6 +51,10 @@ class MyChat implements MessageComponentInterface {
     $app->route('/echo', new Ratchet\Server\EchoServer, array('*'));
     $app->run();
 
+```
+
+```
+php websockets.php
 ```
 
 
