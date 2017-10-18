@@ -1,3 +1,5 @@
+
+###### index.php
 ```php
 <?php
 
@@ -31,5 +33,36 @@ $usual_man->Eat();
 
 $bussines_man = new Man($restraunt);
 $bussines_man->Eat();
+
+```
+
+###### providers.php
+```php
+<?php
+
+interface FoodProvider {
+   public function getFood();
+}
+
+
+class Wife implements FoodProvider {
+
+    public function getFood(){
+    	return ['Борщ', 'Пиво', 'Гречка'];
+    }
+
+}
+
+
+
+class Restraunt implements FoodProvider {
+
+    public function getFood(){
+    	return ['Фуагра', 'Риззото', 'Вино'];
+    }
+
+}
+
+
 
 ```
