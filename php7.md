@@ -1,5 +1,5 @@
 
-### 1. Primitive and object types
+### 1. Primitive types
 ```php
 function Test( float ...$int ){   // primitive types: float, bool, string, int
   var_dump($int);
@@ -32,7 +32,7 @@ var_dump( ReturnTypes() );
 ###  4. Coasceling null
 ```php
 $rez  = 12;
-$data = $rez ?? '';
+$data = $rez ?? ''; // same - $data = $rez ? $rez : '' ;
 echo $data;
 ```
 
